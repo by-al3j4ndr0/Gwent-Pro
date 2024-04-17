@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="scripts\CardBase.cs" />
+    <Compile Include="scripts\FinishTurnButton.cs" />
     <Compile Include="scripts\Main.cs" />
     <Compile Include="scripts\TemplarsCards.cs" />
   </ItemGroup>

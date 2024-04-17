@@ -1,23 +1,61 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Main.cs" type="Script" id=1]
 [ext_resource path="res://assets/board/board.png" type="Texture" id=2]
 [ext_resource path="res://assets/board/board_bg_2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/TemplarsDeck.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/RomansDeck.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/textures/finish_button.png" type="Texture" id=6]
+[ext_resource path="res://scripts/FinishTurnButton.cs" type="Script" id=7]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="TemplarsCam" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 3.5, 3.5 )
+zoom = Vector2( 4, 4 )
+
+[node name="RomansCam" type="Camera2D" parent="."]
+position = Vector2( 11.1428, -545.994 )
+rotation = 3.14159
+rotating = true
+zoom = Vector2( 4, 4 )
 
 [node name="Board" type="Sprite" parent="."]
+position = Vector2( -110.248, -276.625 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 
-[node name="board_bg" type="Sprite" parent="."]
+[node name="BoardBG" type="Sprite" parent="."]
 modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
 show_behind_parent = true
-position = Vector2( -3.65929, -8.55314 )
-scale = Vector2( 3.50098, 2.06102 )
+position = Vector2( -2.14653, -271.329 )
+scale = Vector2( 3.98822, 2.86235 )
 texture = ExtResource( 3 )
 
+[node name="TemplarsDeck" parent="." instance=ExtResource( 4 )]
+margin_left = -1793.14
+margin_top = 670.161
+margin_right = 1831.86
+margin_bottom = 1149.16
+
+[node name="RomansDeck" parent="." instance=ExtResource( 5 )]
+margin_left = 1793.95
+margin_top = -1222.31
+margin_right = 5312.95
+margin_bottom = -743.312
+rect_rotation = 180.0
+
+[node name="FinishTurn" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 0.298039, 0.745098 )
+margin_left = 1540.0
+margin_top = -360.0
+margin_right = 2040.0
+margin_bottom = -160.0
+rect_pivot_offset = Vector2( 250, 100 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[connection signal="pressed" from="FinishTurn" to="." method="_on_FinishTurn_pressed"]
