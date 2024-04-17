@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gwent-Pro"
+run/main_scene="res://scenes/CardBase.tscn"
 config/icon="res://icon.png"
 
 [rendering]
