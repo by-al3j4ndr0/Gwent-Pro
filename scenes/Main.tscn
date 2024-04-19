@@ -1,15 +1,37 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/Main.cs" type="Script" id=1]
 [ext_resource path="res://assets/board/board.png" type="Texture" id=2]
 [ext_resource path="res://assets/board/board_bg_2.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/finish_button.png" type="Texture" id=4]
-[ext_resource path="res://scripts/Global.cs" type="Script" id=5]
-[ext_resource path="res://scripts/TemplarsHand.cs" type="Script" id=6]
-[ext_resource path="res://scenes/TemplarsCardBase.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/RomansHand.cs" type="Script" id=8]
-[ext_resource path="res://scenes/RomansCardBase.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/CardDescription.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/TemplarsHand.cs" type="Script" id=5]
+[ext_resource path="res://scenes/TemplarsCardBase.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/RomansHand.cs" type="Script" id=7]
+[ext_resource path="res://scenes/RomansCardBase.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/CardDescription.cs" type="Script" id=9]
+[ext_resource path="res://assets/cards/border1.png" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/LowresPixel-Regular.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://scripts/Global.cs" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 11 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -50,9 +72,6 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
 
-[node name="Global" type="Node" parent="."]
-script = ExtResource( 5 )
-
 [node name="TemplarsHand" type="HBoxContainer" parent="."]
 editor/display_folded = true
 anchor_left = 0.5
@@ -65,10 +84,10 @@ margin_right = 5211.71
 margin_bottom = 4655.96
 rect_scale = Vector2( 1.5, 1.5 )
 alignment = 1
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
-[node name="TemplarsCardBase" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase" parent="TemplarsHand" instance=ExtResource( 6 )]
+mouse_filter = 1
 
 [node name="TemplarButton" type="TextureButton" parent="TemplarsHand/TemplarsCardBase"]
 margin_left = -0.953247
@@ -77,243 +96,504 @@ margin_right = 339.047
 margin_bottom = 473.807
 rect_min_size = Vector2( 340, 475 )
 
-[node name="TemplarsCardBase2" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase2" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 344.0
 margin_right = 684.0
 
 [node name="TemplarButton2" type="TextureButton" parent="TemplarsHand/TemplarsCardBase2"]
-margin_left = -344.953
-margin_top = -1.19336
-margin_right = -4.95325
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
-[node name="TemplarsCardBase3" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase3" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 688.0
 margin_right = 1028.0
 
 [node name="TemplarButton3" type="TextureButton" parent="TemplarsHand/TemplarsCardBase3"]
-margin_left = -688.953
-margin_top = -1.19336
-margin_right = -348.953
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
-[node name="TemplarsCardBase4" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase4" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 1032.0
 margin_right = 1372.0
 
 [node name="TemplarButton4" type="TextureButton" parent="TemplarsHand/TemplarsCardBase4"]
-margin_left = -1032.95
-margin_top = -1.19336
-margin_right = -692.953
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
-[node name="TemplarsCardBase5" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase5" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 1376.0
 margin_right = 1716.0
 
 [node name="TemplarButton5" type="TextureButton" parent="TemplarsHand/TemplarsCardBase5"]
-margin_left = -1376.95
-margin_top = -1.19336
-margin_right = -1036.95
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
-[node name="TemplarsCardBase6" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase6" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 1720.0
 margin_right = 2060.0
 
 [node name="TemplarButton6" type="TextureButton" parent="TemplarsHand/TemplarsCardBase6"]
-margin_left = -1720.95
-margin_top = -1.19336
-margin_right = -1380.95
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
-[node name="TemplarsCardBase7" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase7" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 2064.0
 margin_right = 2404.0
 
 [node name="TemplarButton7" type="TextureButton" parent="TemplarsHand/TemplarsCardBase7"]
-margin_left = -2064.95
-margin_top = -1.19336
-margin_right = -1724.95
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
-[node name="TemplarsCardBase8" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase8" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 2408.0
 margin_right = 2748.0
 
 [node name="TemplarButton8" type="TextureButton" parent="TemplarsHand/TemplarsCardBase8"]
-margin_left = -2408.95
-margin_top = -1.19336
-margin_right = -2068.95
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
-[node name="TemplarsCardBase9" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase9" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 2752.0
 margin_right = 3092.0
 
 [node name="TemplarButton9" type="TextureButton" parent="TemplarsHand/TemplarsCardBase9"]
-margin_left = -2752.95
-margin_top = -1.19336
-margin_right = -2412.95
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
-[node name="TemplarsCardBase10" parent="TemplarsHand" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="TemplarsCardBase10" parent="TemplarsHand" instance=ExtResource( 6 )]
 margin_left = 3096.0
 margin_right = 3436.0
 
 [node name="TemplarButton10" type="TextureButton" parent="TemplarsHand/TemplarsCardBase10"]
-margin_left = -3096.95
-margin_top = -1.19336
-margin_right = -2756.95
-margin_bottom = 473.807
+margin_right = 340.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
+button_mask = 3
 
 [node name="RomansHand" type="HBoxContainer" parent="."]
-editor/display_folded = true
 margin_left = 6941.56
 margin_top = 697.384
 margin_right = 10377.6
-margin_bottom = 1172.39
+margin_bottom = 1172.38
 rect_rotation = 180.0
 rect_scale = Vector2( 1.5, 1.5 )
-script = ExtResource( 8 )
+alignment = 1
+script = ExtResource( 7 )
 
-[node name="RomansCardBase" parent="RomansHand" instance=ExtResource( 9 )]
+[node name="RomansCardBase" parent="RomansHand" instance=ExtResource( 8 )]
 
-[node name="RomansCardBase2" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 344.0
-margin_right = 684.0
-
-[node name="RomansCardBase3" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 688.0
-margin_right = 1028.0
-
-[node name="RomansCardBase4" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 1032.0
-margin_right = 1372.0
-
-[node name="RomansCardBase5" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 1376.0
-margin_right = 1716.0
-
-[node name="RomansCardBase6" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 1720.0
-margin_right = 2060.0
-
-[node name="RomansCardBase7" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 2064.0
-margin_right = 2404.0
-
-[node name="RomansCardBase8" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 2408.0
-margin_right = 2748.0
-
-[node name="RomansCardBase9" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 2752.0
-margin_right = 3092.0
-
-[node name="RomansCardBase10" parent="RomansHand" instance=ExtResource( 9 )]
-margin_left = 3096.0
-margin_right = 3436.0
-
-[node name="RomansHandButtons2" type="HBoxContainer" parent="."]
-editor/display_folded = true
-margin_left = 6944.78
-margin_top = 696.589
-margin_right = 10380.8
-margin_bottom = 1171.59
-rect_rotation = 180.0
-rect_scale = Vector2( 1.5, 1.5 )
-
-[node name="RomanButton" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomanButton" type="TextureButton" parent="RomansHand/RomansCardBase"]
 margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton2" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase2" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 344.0
 margin_right = 684.0
+
+[node name="RomanButton2" type="TextureButton" parent="RomansHand/RomansCardBase2"]
+margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton3" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase3" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 688.0
 margin_right = 1028.0
+
+[node name="RomanButton3" type="TextureButton" parent="RomansHand/RomansCardBase3"]
+margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton4" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase4" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 1032.0
 margin_right = 1372.0
+
+[node name="RomanButton4" type="TextureButton" parent="RomansHand/RomansCardBase4"]
+margin_right = 340.003
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton5" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase5" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 1376.0
 margin_right = 1716.0
+
+[node name="RomanButton5" type="TextureButton" parent="RomansHand/RomansCardBase5"]
+margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton6" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase6" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 1720.0
 margin_right = 2060.0
+
+[node name="RomanButton6" type="TextureButton" parent="RomansHand/RomansCardBase6"]
+margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton7" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase7" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 2064.0
 margin_right = 2404.0
+
+[node name="RomanButton7" type="TextureButton" parent="RomansHand/RomansCardBase7"]
+margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton8" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase8" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 2408.0
 margin_right = 2748.0
+
+[node name="RomanButton8" type="TextureButton" parent="RomansHand/RomansCardBase8"]
+margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton9" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase9" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 2752.0
 margin_right = 3092.0
+
+[node name="RomanButton9" type="TextureButton" parent="RomansHand/RomansCardBase9"]
+margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="RomanButton10" type="TextureButton" parent="RomansHandButtons2"]
+[node name="RomansCardBase10" parent="RomansHand" instance=ExtResource( 8 )]
 margin_left = 3096.0
 margin_right = 3436.0
+
+[node name="RomanButton10" type="TextureButton" parent="RomansHand/RomansCardBase10"]
+margin_right = 340.0
 margin_bottom = 475.0
 rect_min_size = Vector2( 340, 475 )
 
-[node name="TemplarsDescription" parent="." instance=ExtResource( 10 )]
+[node name="TemplarsDescription" type="Control" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 7065.33
 margin_top = 2753.96
 margin_right = 7405.33
 margin_bottom = 3453.96
+rect_min_size = Vector2( 340, 700 )
 rect_scale = Vector2( 3, 3 )
+script = ExtResource( 9 )
 
-[node name="RomansDescription" parent="." instance=ExtResource( 10 )]
+[node name="Border" type="Sprite" parent="TemplarsDescription"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Card" type="Sprite" parent="TemplarsDescription"]
+show_behind_parent = true
+position = Vector2( 7.57831, 90.8429 )
+scale = Vector2( 0.32, 0.37 )
+centered = false
+
+[node name="Bars" type="VBoxContainer" parent="TemplarsDescription"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TopGap" type="MarginContainer" parent="TemplarsDescription/Bars"]
+margin_right = 82.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 23, 23 )
+
+[node name="TopBar" type="HBoxContainer" parent="TemplarsDescription/Bars"]
+editor/display_folded = true
+margin_top = 27.0
+margin_right = 82.0
+margin_bottom = 67.0
+
+[node name="LeftGap" type="MarginContainer" parent="TemplarsDescription/Bars/TopBar"]
+margin_right = 20.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 20, 40 )
+
+[node name="MidGap" type="MarginContainer" parent="TemplarsDescription/Bars/TopBar"]
+editor/display_folded = true
+margin_left = 24.0
+margin_right = 24.0
+margin_bottom = 40.0
+
+[node name="Name" type="Label" parent="TemplarsDescription/Bars/TopBar/MidGap"]
+margin_top = 2.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="MidGap" type="MarginContainer" parent="TemplarsDescription/Bars"]
+margin_top = 71.0
+margin_right = 82.0
+margin_bottom = 491.0
+rect_min_size = Vector2( 0, 420 )
+
+[node name="MidBar" type="HBoxContainer" parent="TemplarsDescription/Bars"]
+editor/display_folded = true
+margin_top = 495.0
+margin_right = 82.0
+margin_bottom = 525.0
+
+[node name="LeftGap" type="MarginContainer" parent="TemplarsDescription/Bars/MidBar"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="MidGap" type="MarginContainer" parent="TemplarsDescription/Bars/MidBar"]
+margin_left = 34.0
+margin_right = 34.0
+margin_bottom = 30.0
+
+[node name="Type" type="Label" parent="TemplarsDescription/Bars/MidBar/MidGap"]
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Between" type="MarginContainer" parent="TemplarsDescription/Bars/MidBar"]
+margin_left = 38.0
+margin_right = 78.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="RightGap" type="MarginContainer" parent="TemplarsDescription/Bars/MidBar"]
+editor/display_folded = true
+margin_left = 82.0
+margin_right = 82.0
+margin_bottom = 30.0
+
+[node name="Points" type="Label" parent="TemplarsDescription/Bars/MidBar/RightGap"]
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="ButtonGap" type="MarginContainer" parent="TemplarsDescription/Bars"]
+margin_top = 529.0
+margin_right = 82.0
+margin_bottom = 549.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="ButtonBar" type="HBoxContainer" parent="TemplarsDescription/Bars"]
+editor/display_folded = true
+margin_top = 553.0
+margin_right = 82.0
+margin_bottom = 583.0
+
+[node name="LeftGap" type="MarginContainer" parent="TemplarsDescription/Bars/ButtonBar"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="MidGap" type="MarginContainer" parent="TemplarsDescription/Bars/ButtonBar"]
+margin_left = 34.0
+margin_right = 34.0
+margin_bottom = 30.0
+
+[node name="Description" type="Label" parent="TemplarsDescription/Bars/ButtonBar/MidGap"]
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 4 )
+
+[node name="RomansDescription" type="Control" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 8079.64
 margin_top = 2192.77
 margin_right = 8419.64
 margin_bottom = 2892.77
+rect_min_size = Vector2( 340, 700 )
 rect_rotation = 180.0
 rect_scale = Vector2( 3, 3 )
+script = ExtResource( 9 )
+
+[node name="Border" type="Sprite" parent="RomansDescription"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Card" type="Sprite" parent="RomansDescription"]
+show_behind_parent = true
+position = Vector2( 7.57831, 90.8429 )
+scale = Vector2( 0.32, 0.37 )
+centered = false
+
+[node name="Bars" type="VBoxContainer" parent="RomansDescription"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TopGap" type="MarginContainer" parent="RomansDescription/Bars"]
+margin_right = 82.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 23, 23 )
+
+[node name="TopBar" type="HBoxContainer" parent="RomansDescription/Bars"]
+editor/display_folded = true
+margin_top = 27.0
+margin_right = 82.0
+margin_bottom = 67.0
+
+[node name="LeftGap" type="MarginContainer" parent="RomansDescription/Bars/TopBar"]
+margin_right = 20.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 20, 40 )
+
+[node name="MidGap" type="MarginContainer" parent="RomansDescription/Bars/TopBar"]
+margin_left = 24.0
+margin_right = 24.0
+margin_bottom = 40.0
+
+[node name="Name" type="Label" parent="RomansDescription/Bars/TopBar/MidGap"]
+margin_top = 2.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 5 )
+
+[node name="MidGap" type="MarginContainer" parent="RomansDescription/Bars"]
+margin_top = 71.0
+margin_right = 82.0
+margin_bottom = 491.0
+rect_min_size = Vector2( 0, 420 )
+
+[node name="MidBar" type="HBoxContainer" parent="RomansDescription/Bars"]
+editor/display_folded = true
+margin_top = 495.0
+margin_right = 82.0
+margin_bottom = 525.0
+
+[node name="LeftGap" type="MarginContainer" parent="RomansDescription/Bars/MidBar"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="MidGap" type="MarginContainer" parent="RomansDescription/Bars/MidBar"]
+margin_left = 34.0
+margin_right = 34.0
+margin_bottom = 30.0
+
+[node name="Type" type="Label" parent="RomansDescription/Bars/MidBar/MidGap"]
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Between" type="MarginContainer" parent="RomansDescription/Bars/MidBar"]
+margin_left = 38.0
+margin_right = 78.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="RightGap" type="MarginContainer" parent="RomansDescription/Bars/MidBar"]
+editor/display_folded = true
+margin_left = 82.0
+margin_right = 82.0
+margin_bottom = 30.0
+
+[node name="Points" type="Label" parent="RomansDescription/Bars/MidBar/RightGap"]
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="ButtonGap" type="MarginContainer" parent="RomansDescription/Bars"]
+margin_top = 529.0
+margin_right = 82.0
+margin_bottom = 549.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="ButtonBar" type="HBoxContainer" parent="RomansDescription/Bars"]
+editor/display_folded = true
+margin_top = 553.0
+margin_right = 82.0
+margin_bottom = 583.0
+
+[node name="LeftGap" type="MarginContainer" parent="RomansDescription/Bars/ButtonBar"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="MidGap" type="MarginContainer" parent="RomansDescription/Bars/ButtonBar"]
+margin_left = 34.0
+margin_right = 34.0
+margin_bottom = 30.0
+
+[node name="Description" type="Label" parent="RomansDescription/Bars/ButtonBar/MidGap"]
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 4 )
+
+[node name="TemplarsPositions" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Melee" type="HBoxContainer" parent="TemplarsPositions"]
+margin_left = 2669.15
+margin_top = 2539.31
+margin_right = 6069.15
+margin_bottom = 3014.31
+rect_min_size = Vector2( 3400, 475 )
+
+[node name="Distance" type="HBoxContainer" parent="TemplarsPositions"]
+margin_left = 2669.86
+margin_top = 3090.35
+margin_right = 6069.86
+margin_bottom = 3565.35
+rect_min_size = Vector2( 3400, 475 )
+
+[node name="Asedium" type="HBoxContainer" parent="TemplarsPositions"]
+margin_left = 2678.4
+margin_top = 3674.87
+margin_right = 6078.4
+margin_bottom = 4149.87
+rect_min_size = Vector2( 3400, 475 )
+
+[node name="MeleeIncrease" type="CenterContainer" parent="TemplarsPositions"]
+margin_left = 2201.67
+margin_top = 2538.69
+margin_right = 2541.67
+margin_bottom = 3013.69
+rect_min_size = Vector2( 340, 475 )
+
+[node name="DistanceIncrease" type="CenterContainer" parent="TemplarsPositions"]
+margin_left = 2207.46
+margin_top = 3092.5
+margin_right = 2547.46
+margin_bottom = 3567.5
+rect_min_size = Vector2( 340, 475 )
+
+[node name="AsediumIncrease" type="CenterContainer" parent="TemplarsPositions"]
+margin_left = 2214.63
+margin_top = 3679.26
+margin_right = 2554.63
+margin_bottom = 4154.26
+rect_min_size = Vector2( 340, 475 )
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource( 12 )
 
 [connection signal="pressed" from="FinishTurn" to="." method="_on_FinishTurn_pressed"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase/TemplarButton" to="TemplarsHand/TemplarsCardBase" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase2/TemplarButton2" to="TemplarsHand/TemplarsCardBase2" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase3/TemplarButton3" to="TemplarsHand/TemplarsCardBase3" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase4/TemplarButton4" to="TemplarsHand/TemplarsCardBase4" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase5/TemplarButton5" to="TemplarsHand/TemplarsCardBase5" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase6/TemplarButton6" to="TemplarsHand/TemplarsCardBase6" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase7/TemplarButton7" to="TemplarsHand/TemplarsCardBase7" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase8/TemplarButton8" to="TemplarsHand/TemplarsCardBase8" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase9/TemplarButton9" to="TemplarsHand/TemplarsCardBase9" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="TemplarsHand/TemplarsCardBase10/TemplarButton10" to="TemplarsHand/TemplarsCardBase10" method="_on_TemplarsButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase/RomanButton" to="RomansHand/RomansCardBase" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase2/RomanButton2" to="RomansHand/RomansCardBase2" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase3/RomanButton3" to="RomansHand/RomansCardBase3" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase4/RomanButton4" to="RomansHand/RomansCardBase4" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase5/RomanButton5" to="RomansHand/RomansCardBase5" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase6/RomanButton6" to="RomansHand/RomansCardBase6" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase7/RomanButton7" to="RomansHand/RomansCardBase7" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase8/RomanButton8" to="RomansHand/RomansCardBase8" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase9/RomanButton9" to="RomansHand/RomansCardBase9" method="_on_RomansButton_mouse_entered"]
+[connection signal="mouse_entered" from="RomansHand/RomansCardBase10/RomanButton10" to="RomansHand/RomansCardBase10" method="_on_RomansButton_mouse_entered"]

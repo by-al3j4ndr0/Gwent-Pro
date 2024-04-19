@@ -50,6 +50,7 @@ scale = Vector2( 0.32, 0.37 )
 centered = false
 
 [node name="Bars" type="VBoxContainer" parent="."]
+editor/display_folded = true
 margin_right = 340.0
 margin_bottom = 475.0
 
@@ -59,6 +60,7 @@ margin_bottom = 23.0
 rect_min_size = Vector2( 0, 23 )
 
 [node name="TopBar" type="HBoxContainer" parent="Bars"]
+editor/display_folded = true
 margin_top = 27.0
 margin_right = 340.0
 margin_bottom = 67.0
@@ -77,4 +79,26 @@ margin_bottom = 40.0
 margin_top = 2.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 2 )
+
+[node name="HideProperties" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Type" type="Label" parent="HideProperties"]
+visible = false
+margin_top = 13.0
+margin_right = 40.0
+margin_bottom = 27.0
+
+[node name="Points" type="Label" parent="HideProperties"]
+visible = false
+margin_top = 13.0
+margin_right = 40.0
+margin_bottom = 27.0
+
+[node name="Description" type="Label" parent="HideProperties"]
+visible = false
+margin_top = 13.0
+margin_right = 40.0
+margin_bottom = 27.0
 

@@ -16,7 +16,10 @@ public class RomansHand : HBoxContainer
             card_name = global.romansCards.name[card_rnd];
             child.GetNode<Sprite>("Card").Texture = GD.Load<Texture>($"res://assets/cards/romans/{card_name[0]}.png");
             child.GetNode<Label>("Bars/TopBar/MidGap/Name").Text = card_name[1];
-            global.romansCards.name.RemoveAt(card_rnd);
+            child.GetNode<Label>("HideProperties/Type").Text = card_name[2];
+            child.GetNode<Label>("HideProperties/Points").Text = card_name[4];
+            child.GetNode<Label>("HideProperties/Description").Text = card_name[5];
+            // global.romansCards.name.RemoveAt(card_rnd);
         }
     }
 
