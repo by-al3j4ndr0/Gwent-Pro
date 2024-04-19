@@ -8,7 +8,7 @@ public class TemplarsCards : Node
     public static string[] the_hood = {"the_hood", "The Hood", "Distance", "old", "8", "Donde pone el ojo \npone una flecha"};
     public static string[] simple_soldier = {"simple_soldier", "Soldier", "Melee", "silver", "3", "Soldado de infaneria. \nSimple pero valioso"};
     public static string[] the_fog = {"the_fog", "Battle Fog", "Weather", "", "4", "Neblina en el campo \n de batalla, podria \ndificultar la vision"};
-    public static string[] priest = {"priest", "Priest", "Increase", "", "2", "La fe puede mover \nmontanas o aumentar \nel poder de las tropas"};
+    public static string[] priest = {"priest", "Priest", "MeleeIncrease", "", "2", "La fe puede mover \nmontanas o aumentar \nel poder de las tropas"};
     public static string[] sun_horizon = {"sun_horizon", "Sun Horizon", "Clearance", "", "", "Un dia soleado puede \nacabar con cualquier \nmal clima"};
     public static string[] catapult = {"catapult", "Catapult", "Asedium", "gold", "8", "Un objetivo nunca \nesta lo sificiente \nlejos"};
     public static string[] archer = {"archer", "Infantery Archer", "Distance", "silver", "3", "No necesita estar \ncerca ara acabar \ncon un enemigo"};

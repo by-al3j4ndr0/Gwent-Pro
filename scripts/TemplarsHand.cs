@@ -19,13 +19,17 @@ public class TemplarsHand : HBoxContainer
             child.GetNode<Label>("HideProperties/Type").Text = card_name[2];
             child.GetNode<Label>("HideProperties/Points").Text = card_name[4];
             child.GetNode<Label>("HideProperties/Description").Text = card_name[5];
-            global.templarsCards.name.RemoveAt(card_rnd);
+            // global.templarsCards.name.RemoveAt(card_rnd);
         }
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
+        
+    }
+
+    private void _LeaderInvocation(){
         
     }
 }

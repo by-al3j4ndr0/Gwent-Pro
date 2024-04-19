@@ -29,6 +29,7 @@ public class Main : Node2D
             GetNode<TextureButton>("FinishTurn").RectRotation = 180; // Rotate the button
             GetNode<Control>("TemplarsDescription").Visible = false;
             global.current_player = "romans";
+            global.hasPlay = false;
         } else if(global.current_player == "romans"){
             GetNode<Camera2D>("TemplarsCam").Current = true;
             GetNode<Camera2D>("RomansCam").Current = false;
@@ -36,6 +37,7 @@ public class Main : Node2D
             GetNode<TextureButton>("FinishTurn").RectRotation = 0;
             GetNode<Control>("RomansDescription").Visible = false;
             global.current_player = "templars";
+            global.hasPlay = false;
         }
     }
 }
