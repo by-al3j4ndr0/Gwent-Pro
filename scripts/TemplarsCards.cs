@@ -3,7 +3,7 @@ using System;
 
 public class TemplarsCards : Node
 {
-    public static string[] leader = {"leader", "Sir. Jacques de Molay", "Leader", "", "10", "Leader of Templars"};
+    public string[] leader = {"leader", "Sir. Jacques de Molay", "Leader", "", "10", "Leader of Templars"};
     public static string[] leonheart = {"leonheart", "Eduard Leonheart", "Melee", "gold", "8", "Con su gran fuerza \ndestroza a todos los \nenemigos"};
     public static string[] the_hood = {"the_hood", "The Hood", "Distance", "old", "8", "Donde pone el ojo \npone una flecha"};
     public static string[] simple_soldier = {"simple_soldier", "Soldier", "Melee", "silver", "3", "Soldado de infaneria. \nSimple pero valioso"};
@@ -23,7 +23,6 @@ public class TemplarsCards : Node
         sun_horizon,
         catapult,
         archer,
-        battle_ram,
-        leader
+        battle_ram
     };
 }

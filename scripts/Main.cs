@@ -3,8 +3,6 @@ using System;
 
 public class Main : Node2D
 {
-    Global global;
-
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -15,12 +13,14 @@ public class Main : Node2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-    
+        var global = (Global)GetNode("/root/Global");
+        GetNode<Label>("PointsPop/TemplarsPoints").Text = $"{global.templarsPoints.ToString()} Pts.";
+        GetNode<Label>("PointsPop/RomansPoints").Text = $"{global.romansPoints.ToString()} Pts.";
     }
 
     public void _on_FinishTurn_pressed()
     {
-        global = GetNode<Global>("/root/Global");
+        var global = (Global)GetNode("/root/Global");
         // Check que current player and do the changes in the enviroment 
         if(global.current_player == "templars"){
             GetNode<Camera2D>("TemplarsCam").Current = false; // Change the player camera

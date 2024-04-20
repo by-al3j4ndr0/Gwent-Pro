@@ -7,4 +7,6 @@ public class Global : Node
     public bool hasPlay = false;
     public TemplarsCards templarsCards = new TemplarsCards();
     public RomansCards romansCards = new RomansCards();
+    public int templarsPoints = 0;
+    public int romansPoints = 0;
 }
