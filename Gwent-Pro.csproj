@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scripts\FinishRoundDialog.cs" />
     <Compile Include="scripts\RomansCardBase.cs" />
     <Compile Include="scripts\TemplarsCardBase.cs" />
     <Compile Include="scripts\CardDescription.cs" />

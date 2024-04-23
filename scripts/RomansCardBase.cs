@@ -22,14 +22,14 @@ public class RomansCardBase : Control
     private void _on_RomansButton_mouse_entered()
     {
         var global = (Global)GetNode("/root/Global");
-        if(global.current_player == "romans"){
+        if(global.current_player == "Romans"){
             GetNode<Control>("/root/Main/RomansDescription").Visible = true;
             GetNode<Sprite>("/root/Main/RomansDescription/Card").Texture = this.GetNode<Sprite>("Card").Texture;
             GetNode<Label>("/root/Main/RomansDescription/Bars/TopBar/MidGap/Name").Text = this.GetNode<Label>("Bars/TopBar/MidGap/Name").Text;
             GetNode<Label>("/root/Main/RomansDescription/Bars/MidBar/MidGap/Type").Text = this.GetNode<Label>("HideProperties/Type").Text;
             GetNode<Label>("/root/Main/RomansDescription/Bars/MidBar/RightGap/Points").Text = this.GetNode<Label>("HideProperties/Points").Text;
             GetNode<Label>("/root/Main/RomansDescription/Bars/ButtonBar/MidGap/Description").Text = this.GetNode<Label>("HideProperties/Description").Text;
-        } else if(global.current_player == "templars"){
+        } else if(global.current_player == "Templars"){
             GetNode<Control>("/root/Main/RomansDescription").Visible = false;
         }
     }

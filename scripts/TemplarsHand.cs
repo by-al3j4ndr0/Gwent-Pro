@@ -39,14 +39,14 @@ public class TemplarsHand : HBoxContainer
     private void _on_TemplarLeaderButton_mouse_entered()
     {
         var global = (Global)GetNode("/root/Global");
-        if(global.current_player == "templars"){
+        if(global.current_player == "Templars"){
             GetNode<Control>("/root/Main/TemplarsDescription").Visible = true;
             GetNode<Sprite>("/root/Main/TemplarsDescription/Card").Texture = GetNode("/root/Main/TemplarsPositions/Leader/Leader").GetNode<Sprite>("Card").Texture;
             GetNode<Label>("/root/Main/TemplarsDescription/Bars/TopBar/MidGap/Name").Text = GetNode("/root/Main/TemplarsPositions/Leader/Leader").GetNode<Label>("Bars/TopBar/MidGap/Name").Text;
             GetNode<Label>("/root/Main/TemplarsDescription/Bars/MidBar/MidGap/Type").Text = this.GetNode<Label>("/root/Main/TemplarsPositions/Leader/Leader/HideProperties/Type").Text;
             GetNode<Label>("/root/Main/TemplarsDescription/Bars/MidBar/RightGap/Points").Text = this.GetNode<Label>("/root/Main/TemplarsPositions/Leader/Leader/HideProperties/Points").Text;
             GetNode<Label>("/root/Main/TemplarsDescription/Bars/ButtonBar/MidGap/Description").Text = this.GetNode<Label>("/root/Main/TemplarsPositions/Leader/Leader/HideProperties/Description").Text;
-        } else if(global.current_player == "romans"){
+        } else if(global.current_player == "Romans"){
             GetNode<Control>("/root/Main/TemplarsDescription").Visible = false;
         }
     }
