@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="TemplarButton" type="TextureButton"]
+margin_left = -0.953247
+margin_top = -1.19336
+margin_right = 339.047
+margin_bottom = 473.807
+rect_min_size = Vector2( 340, 475 )
+

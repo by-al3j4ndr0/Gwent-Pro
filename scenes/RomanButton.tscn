@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="RomanButton" type="TextureButton"]
+margin_right = 340.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 340, 475 )
+

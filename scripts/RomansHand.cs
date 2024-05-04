@@ -5,7 +5,7 @@ public class RomansHand : HBoxContainer
 {
     Random rnd = new Random();
     int card_rnd;
-    string[] card_name;
+    public string[] card_name;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -54,5 +54,18 @@ public class RomansHand : HBoxContainer
     private void _on_RomanLeaderButton_mouse_exited()
     {
         GetNode<Control>("/root/Main/RomansDescription").Visible = false;
+    }
+
+    private void _on_LeaderButton_pressed()
+    {
+        Node melee = GetNode("/root/Main/RomansPositions/Melee");
+        Node hand = GetNode("/root/Main/RomansHand");
+        int i = 0;
+        while(i < melee.GetChildCount())
+        {
+            var child = melee.GetChild(i);
+            melee.RemoveChild(child);
+            hand.AddChild(child);
+        }
     }
 }

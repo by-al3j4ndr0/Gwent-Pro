@@ -20,7 +20,7 @@ public class TemplarsHand : HBoxContainer
             child.GetNode<Label>("HideProperties/Type").Text = card_name[2];
             child.GetNode<Label>("HideProperties/Points").Text = card_name[4];
             child.GetNode<Label>("HideProperties/Description").Text = card_name[5];
-            // global.templarsCards.name.RemoveAt(card_rnd);
+            global.templarsCards.name.RemoveAt(card_rnd);
         }
 
         GetNode<Sprite>("/root/Main/TemplarsPositions/Leader/Leader/Card").Texture = GD.Load<Texture>("res://assets/cards/templars/leader.png");
@@ -54,5 +54,18 @@ public class TemplarsHand : HBoxContainer
     private void _on_TemplarLeaderButton_mouse_exited()
     {
         GetNode<Control>("/root/Main/TemplarsDescription").Visible = false;
+    }
+
+    private void _on_LeaderButton_pressed()
+    {
+        Node melee = GetNode("/root/Main/TemplarsPositions/Melee");
+        Node hand = GetNode("/root/Main/TemplarsHand");
+        int i = 0;
+        while(i < melee.GetChildCount())
+        {
+            var child = melee.GetChild(i);
+            melee.RemoveChild(child);
+            hand.AddChild(child);
+        }
     }
 }
